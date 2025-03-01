@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import './Checkout.css';
+
 
 const Checkout = () => {
   const location = useLocation();
@@ -11,6 +13,9 @@ const Checkout = () => {
   const [addresses, setAddresses] = useState([]); // Store multiple addresses
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [quantity, setQuantity] = useState(1); // Track product quantity
+  const orderDetails = product || { name: "Sample Product", price: 0 };
+  const totalPrice = orderDetails.price * quantity; // Define before using it in handlePayment
+
 
   const handleLoginSubmit = () => {
     if (loginInfo.name && loginInfo.phone) {
@@ -54,37 +59,34 @@ const Checkout = () => {
   const handlePayment = () => {
     const options = {
       key: "rzp_test_pYO1RxhwzDCppY", // Replace this with your Razorpay API key
-      amount: totalPrice * 100, // Use totalPrice dynamically, convert to paise
+      amount: totalPrice * 100, // Convert to paise
       currency: "INR",
-      name: orderDetails.name,
+      name: orderDetails.name, // Use orderDetails.name correctly
       description: "Order Payment",
-      image: "/logo.png", // Your logo (optional)
+      image: "/logo.png",
       handler: function (response) {
-        // Handle the successful payment response
         console.log(response);
         alert("Payment Successful!");
-        navigate("/success"); // Redirect to success page or show success message
+        navigate("/success");
       },
       prefill: {
         name: loginInfo.name,
-        email: "", // Optional, add user's email if you have it
+        email: "", // Optional
         contact: loginInfo.phone,
       },
       notes: {
         address: selectedAddress ? selectedAddress.address : "Not provided",
       },
     };
-
+  
     if (window.Razorpay) {
-      const rzp = new window.Razorpay(options); // Initialize Razorpay with the options
-      rzp.open(); // Open the Razorpay payment modal
+      const rzp = new window.Razorpay(options);
+      rzp.open();
     } else {
       console.error("Razorpay SDK not loaded correctly.");
     }
   };
-
-  const orderDetails = product || { name: "Sample Product", price: 0 };
-
+ 
   // Load Razorpay script dynamically
   useEffect(() => {
     if (!window.Razorpay) {
@@ -95,7 +97,7 @@ const Checkout = () => {
     }
   }, []);
 
-  const totalPrice = orderDetails.price * quantity;
+  
 
   return (
     <div className="checkout-container flex flex-col lg:flex-row gap-y-4 lg:gap-x-8 p-4 max-w-6xl mx-auto">

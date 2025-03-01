@@ -1,4 +1,6 @@
 import React from 'react';
+import './Navbar.css';
+
 import { Link, useNavigate } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai'; // Home icon
 import { FaInfoCircle, FaBoxOpen, FaShoppingCart, FaUserAlt } from 'react-icons/fa'; // Icons for other links

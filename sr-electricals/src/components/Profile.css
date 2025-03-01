@@ -1,0 +1,87 @@
+/* Profile Page Styling */
+.profile-container {
+    background: linear-gradient(to bottom, #f9fafb, #e2e8f0);
+    min-height: 100vh;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  /* Headings */
+  h2 {
+    color: #1f2937;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Profile Card */
+  .bg-white {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .bg-white:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Order History */
+  .border {
+    border: 2px solid #cbd5e1;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8fafc;
+  }
+  
+  .border:hover {
+    border-color: #94a3b8;
+  }
+  
+  /* Product Details */
+  .flex.items-center img {
+    border-radius: 8px;
+    border: 2px solid #e5e7eb;
+    transition: transform 0.3s ease;
+  }
+  
+  .flex.items-center img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Text Styling */
+  .text-gray-500 {
+    color: #64748b !important;
+    font-size: 0.9rem;
+  }
+  
+  /* Order Total */
+  .text-lg {
+    color: #0f172a;
+    font-weight: bold;
+  }
+  
+  /* No Orders Message */
+  .text-center {
+    font-style: italic;
+    opacity: 0.8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-container {
+      padding: 20px;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    .bg-white {
+      padding: 15px;
+    }
+    .border {
+      padding: 10px;
+    }
+  }
+  

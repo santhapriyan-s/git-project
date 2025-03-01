@@ -1,18 +1,34 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth, googleProvider } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
+import "./Login.css";
 
 const Login = ({ setUser }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  // Handle email/password login
   const handleLogin = (e) => {
     e.preventDefault();
     if (username && password) {
       setUser({ username });
-      navigate('/main');
+      navigate("/main");
     } else {
-      alert('Please fill in all fields');
+      alert("Please fill in all fields");
+    }
+  };
+
+  // Handle Google Sign-In
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      setUser({ username: user.displayName, email: user.email });
+      navigate("/main");
+    } catch (error) {
+      console.error("Google Sign-In Error:", error);
     }
   };
 
@@ -38,7 +54,14 @@ const Login = ({ setUser }) => {
         </div>
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <a href="/signup">Sign up</a></p>
+
+      <button onClick={handleGoogleSignIn} className="google-btn">
+        Sign in with Google
+      </button>
+
+      <p>
+        Don't have an account? <a href="/signup">Sign up</a>
+      </p>
     </div>
   );
 };

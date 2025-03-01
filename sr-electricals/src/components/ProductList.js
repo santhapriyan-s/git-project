@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import productsData from "../data/products";
+import './ProductList.css';
+
 
 const ProductList = ({ addToCart, addToFavourites }) => {
   const [products, setProducts] = useState(productsData);

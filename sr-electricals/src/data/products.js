@@ -1,3 +1,5 @@
+import "./products.css";
+
 const products = [
     {
       id: 1,

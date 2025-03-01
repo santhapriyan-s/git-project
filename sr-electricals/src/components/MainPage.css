@@ -1,0 +1,155 @@
+/* Ensure full-page layout */
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #0044cc, #002a80); /* Gradient Background */
+  color: white;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 85%;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Featured Products */
+.featured-products {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Services Section */
+.services {
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.services ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.services li {
+  font-size: 18px;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.services li::before {
+  content: "✔";
+  color: #0044cc;
+  font-weight: bold;
+}
+
+/* Testimonials Section */
+.testimonials {
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.testimonial {
+  background: #f9f9f9;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 5px solid #0044cc;
+}
+
+/* Contact Section */
+.contact {
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.contact p {
+  font-size: 16px;
+}
+
+/* Button Styling */
+.btn-primary {
+  background: #ff6600;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #cc5200;
+}

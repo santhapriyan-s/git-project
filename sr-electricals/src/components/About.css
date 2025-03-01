@@ -1,0 +1,146 @@
+/* General Styling */
+.about-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  color: white;
+  animation: fadeIn 1.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-container:hover {
+  transform: scale(1.02);
+}
+
+/* Heading Styling */
+.about-container h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #f39c12;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+.about-container h3 {
+  font-size: 2.2rem;
+  margin-top: 25px;
+  color: #e74c3c;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Paragraph Styling */
+.about-container p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #222;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* List Styling */
+.about-container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.about-container ul li {
+  font-size: 1.2rem;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  margin: 10px 0;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-container ul li:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-container {
+    width: 95%;
+    padding: 35px;
+  }
+
+  .about-container h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-container h3 {
+    font-size: 2rem;
+  }
+
+  .about-container p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 30px;
+  }
+
+  .about-container h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-container h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-container p {
+    font-size: 1.1rem;
+  }
+
+  .about-container ul li {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .about-container h2 {
+    font-size: 2rem;
+  }
+
+  .about-container h3 {
+    font-size: 1.6rem;
+  }
+
+  .about-container p {
+    font-size: 1rem;
+  }
+
+  .about-container ul li {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
